@@ -25,7 +25,6 @@ const NoteSection: React.FC = () => {
   const onBlur = () => {
     if (refInput.current !== null) {
       setNote(refInput.current.value)
-
     }
   }
   console.log(note)
