@@ -22,11 +22,19 @@ const useTags = () => {
         return result
     }
     const updateTag = (id: number, obj: { name: string }) => {
+        //获取你要改的 tag 的下标
         const index = findTagIndex(id)
         //深拷贝 tags 得到 tagsClone
         const tagsClone = JSON.parse(JSON.stringify(tags))
         //把 tagsClone 的第 index 删掉，换成{id:id,name:obj.name}
         tagsClone.splice(index, 1, { id: id, name: obj.name })
+        setTags(tagsClone)
+
+    }
+    const deleteTag = (id: number) => {
+        const index = findTagIndex(id)
+        const tagsClone = JSON.parse(JSON.stringify(tags))
+        tagsClone.splice(index, 1)
         setTags(tagsClone)
     }
     return {
@@ -34,7 +42,8 @@ const useTags = () => {
         setTags,
         findTag,
         updateTag,
-        findTagIndex
+        findTagIndex,
+        deleteTag
     }
 }
 
