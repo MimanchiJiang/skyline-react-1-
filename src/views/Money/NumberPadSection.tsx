@@ -1,3 +1,4 @@
+// eslint-disable-next-line
 import React, { useState } from 'react'
 import Wrapper from './NumberPadSection/Wrapper';
 import generateOutput from './NumberPadSection/generateOutput';
@@ -24,8 +25,8 @@ const NumberPadSection: React.FC<Props> = (props) => {
   }
   const onClickButtonWrapper = (e: React.MouseEvent) => {
     const text = (e.target as HTMLButtonElement).textContent
-    if (text === null) { return }
-    if (text == 'OK') {
+    if (text == null) { return }
+    if (text === 'OK') {
       if (props.onOk) {
         props.onOk()
 
