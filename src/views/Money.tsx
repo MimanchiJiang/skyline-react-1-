@@ -5,21 +5,24 @@ import { TagsSection } from './Money/TagsSection';
 import { CategorySection } from './Money/CategorySection';
 import { NoteSection } from './Money/NoteSection';
 import { NumberPadSection } from './Money/NumberPadSection';
+import { useRecords } from '../hooks/useRecord';
 
 const MyLayout = styled(Layout)`
   display:flex;
   flex-direction: column;
 `
 
+const defaultFormData = {
+  tagIds: [] as number[],
+  note: '',
+  category: '-' as Category,
+  amount: 0
+
+}
+
 type Category = '-' | '+'
 function Money() {
-  const [selected, setSelected] = useState({
-    tagIds: [] as number[],
-    note: '',
-    category: '-' as Category,
-    amount: 0
-
-  })
+  const [selected, setSelected] = useState(defaultFormData)
   //获取selected的类型
   //Partial obj的类型是Selected的部分类型
   const onChange = (obj: Partial<typeof selected>) => {
@@ -27,6 +30,14 @@ function Money() {
       ...selected,
       ...obj
     })
+  }
+  const { records, addRecord } = useRecords();
+  console.log(records)
+
+  const submit = () => {
+    addRecord(selected)
+    alert('保存成功')
+    setSelected(defaultFormData)
   }
   return (
     <MyLayout>
@@ -47,7 +58,7 @@ function Money() {
             onChange({ amount })
           }
         }
-        onOk={() => { }} />
+        onOk={submit} />
 
     </MyLayout>
   );

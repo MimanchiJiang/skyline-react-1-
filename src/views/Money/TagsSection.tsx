@@ -1,7 +1,7 @@
 // eslint-disable-next-line
 import React, { useState } from 'react'
 import styled from 'styled-components';
-import useTags from 'useTags';
+import useTags from 'hooks/useTags';
 
 const Wrapper = styled.section`
   background: #FFFFFF; padding: 12px 16px;
