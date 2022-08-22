@@ -35,8 +35,9 @@ function Money() {
   console.log(records)
 
   const submit = () => {
-    addRecord(selected)
-    alert('保存成功')
+    if (addRecord(selected)) {
+      alert('保存成功')
+    }
     setSelected(defaultFormData)
   }
   return (

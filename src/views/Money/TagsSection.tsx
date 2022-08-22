@@ -26,7 +26,7 @@ const Wrapper = styled.section`
 type Props = { value: number[]; onChange: (selected: number[]) => void }
 
 const TagsSection: React.FC<Props> = (props) => {
-  const { tags } = useTags()
+  const { tags, AddTag } = useTags()
 
   const selectedTagIds = props.value;
 
@@ -51,7 +51,7 @@ const TagsSection: React.FC<Props> = (props) => {
           </li>
         )}
       </ol>
-      <button>新增标签</button>
+      <button onClick={AddTag}>新增标签</button>
     </Wrapper>
   )
 }
