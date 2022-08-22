@@ -9,11 +9,13 @@ import Center from 'components/Center';
 import Space from 'components/Space';
 
 const TagList = styled.ol`
+  caret-color: transparent;
+
 font-size: 16px;
 background:white;
 >li{
   line-height: 20px;
-  border-bottom: 1px solid #d5d5d9;
+  border-bottom: 1px solid rgb(181,202,161);
   margin-left: 16px;
   margin-right: 16px;
   >a{

@@ -2,6 +2,8 @@ import styled from 'styled-components';
 import React, { useState } from 'react'
 
 const Wrapper = styled.section`
+  caret-color: transparent;
+  background: rgb(181,202,161);
   font-size: 24px;
   > ul{
     display:flex;

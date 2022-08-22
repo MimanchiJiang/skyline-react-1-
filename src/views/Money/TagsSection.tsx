@@ -7,13 +7,15 @@ const Wrapper = styled.section`
   background: #FFFFFF; padding: 12px 16px;
   flex-grow: 1; display:flex; flex-direction: column;
   justify-content: flex-end; align-items: flex-start;
+  caret-color: transparent;
+
   > ol { margin: 0 -12px;
     > li{
-       background: #D9D9D9; border-radius: 18px;
+       background: #e0dbdb; border-radius: 18px;
        display:inline-block; padding: 3px 18px; 
        font-size: 14px; margin: 8px 12px;
        &.selected{
-        background: #f60;
+        background: rgb(181,202,161);
        }
     }
   }

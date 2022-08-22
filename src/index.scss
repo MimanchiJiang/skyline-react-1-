@@ -35,6 +35,11 @@ body {
   background: #f5f5f5;
 }
 
+.noCaret {
+  caret-color: transparent;
+
+}
+
 button,
 input {
   font: inherit;

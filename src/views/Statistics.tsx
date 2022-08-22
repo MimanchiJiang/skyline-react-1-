@@ -7,11 +7,11 @@ import useTags from 'hooks/useTags';
 import dayjs from 'dayjs'
 
 
-const CategoryWrapper = styled.div`
-background: white;
-`
+
 
 const Item = styled.div`
+  caret-color: transparent;
+
 display: flex;
 justify-content: space-between;
 background: white;
@@ -23,12 +23,17 @@ padding: 10px 16px;
   margin-left: 16px;
   color: #999;
 }
+>.amount{
+}
 `
 
 const Header = styled.h3`
+  caret-color: transparent;
+  background: #dfebd3;
   font-size: 18px;
   line-height: 20px;
   padding: 10px 16px;
+  color: rgb(140,138,144);
 `
 
 
@@ -59,9 +64,7 @@ function Statistics() {
 
   return (
     <Layout>
-      <CategoryWrapper>
-        <CategorySection value={category} onChange={value => setCategory(value)} />
-      </CategoryWrapper>
+      <CategorySection value={category} onChange={value => setCategory(value)} />
       {array.map(([date, records]) => <div>
         <Header>
           {date}
